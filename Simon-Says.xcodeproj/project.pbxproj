@@ -24,6 +24,7 @@
 		6B7EE9141F08E8B3006252BD /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7EE9131F08E8B3006252BD /* NotificationController.m */; };
 		6B7EE9161F08E8B3006252BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B7EE9151F08E8B3006252BD /* Assets.xcassets */; };
 		6B7EE91A1F08E8B3006252BD /* Simon-Says-WatchKit.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 6B7EE8F91F08E8B2006252BD /* Simon-Says-WatchKit.app */; };
+		6B7EE9281F08EBD2006252BD /* SimonMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7EE9271F08EBD2006252BD /* SimonMenuVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,8 @@
 		6B7EE9131F08E8B3006252BD /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		6B7EE9151F08E8B3006252BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B7EE9171F08E8B3006252BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B7EE9261F08EBD2006252BD /* SimonMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimonMenuVC.h; path = ../ViewControllers/SimonMenuVC.h; sourceTree = "<group>"; };
+		6B7EE9271F08EBD2006252BD /* SimonMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimonMenuVC.m; path = ../ViewControllers/SimonMenuVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +231,7 @@
 		6B7EE9091F08E8B3006252BD /* Simon-Says-WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				6B7EE9291F08EBDF006252BD /* ViewControllers */,
 				6B7EE90C1F08E8B3006252BD /* InterfaceController.h */,
 				6B7EE90D1F08E8B3006252BD /* InterfaceController.m */,
 				6B7EE90F1F08E8B3006252BD /* ExtensionDelegate.h */,
@@ -247,6 +251,15 @@
 				6B7EE90B1F08E8B3006252BD /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6B7EE9291F08EBDF006252BD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6B7EE9261F08EBD2006252BD /* SimonMenuVC.h */,
+				6B7EE9271F08EBD2006252BD /* SimonMenuVC.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -477,6 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B7EE9281F08EBD2006252BD /* SimonMenuVC.m in Sources */,
 				6B7EE9111F08E8B3006252BD /* ExtensionDelegate.m in Sources */,
 				6B7EE90E1F08E8B3006252BD /* InterfaceController.m in Sources */,
 				6B7EE9141F08E8B3006252BD /* NotificationController.m in Sources */,
