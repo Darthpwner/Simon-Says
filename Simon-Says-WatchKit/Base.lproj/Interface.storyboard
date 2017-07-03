@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
-        <!--Simon MenuVC-->
+        <!--Simon Menu-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="SimonMenuVC">
+                <controller identifier="SimonMenuVC" title="Simon Menu" id="AgC-eL-Hgc" customClass="SimonMenuVC">
                     <items>
                         <button width="136" alignment="left" title="Start Game" id="uHs-Vx-2D6">
                             <connections>
@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--Simon GameVC-->
+        <!--Simon-->
         <scene sceneID="D84-Ie-PU9">
             <objects>
-                <controller id="tNV-Zo-9SM" customClass="SimonGameVC">
+                <controller identifier="SimonGameVC" title="Simon" id="tNV-Zo-9SM" customClass="SimonGameVC">
                     <items>
                         <separator alignment="left" id="OFj-aT-qu8"/>
                         <group width="1" height="55" alignment="left" id="gvD-l1-P0O">

@@ -17,11 +17,6 @@
 
 @implementation SimonMenuVC
 
-- (IBAction)startGameAction {
-    [self pushControllerWithName:@"SimonNameVC" context: self];
-}
-
-
 - (void) awakeWithContext:(id)context {
     [super awakeWithContext:context];
     
@@ -36,6 +31,10 @@
 - (void) didDeactivate {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
+}
+
+- (IBAction)startGameAction {
+    [self pushControllerWithName:@"SimonNameVC" context: self];
 }
 
 @end
