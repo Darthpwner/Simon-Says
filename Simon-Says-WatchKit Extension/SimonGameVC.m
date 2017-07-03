@@ -35,4 +35,17 @@
     [super didDeactivate];
 }
 
+- (IBAction)upperLeftAction {
+}
+
+- (IBAction)upperRightAction {
+}
+
+- (IBAction)lowerLeftAction {
+}
+
+- (IBAction)lowerRightAction {
+}
+
+
 @end
