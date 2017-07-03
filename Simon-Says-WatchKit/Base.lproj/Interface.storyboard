@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
-        <!--SimonMenuVC-->
+        <!--Simon MenuVC-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="SimonMenuVC" id="AgC-eL-Hgc" customClass="SimonMenuVC">
+                <controller id="AgC-eL-Hgc" customClass="SimonMenuVC">
                     <items>
                         <button width="136" alignment="left" title="Start Game" id="uHs-Vx-2D6"/>
                         <label width="136" alignment="left" text="Game Over" textAlignment="center" id="orZ-An-tAf"/>
