@@ -14,10 +14,29 @@
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *lowerLeftButton;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *lowerRightButton;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *notificationLabel;
+@property (strong, nonatomic) NSArray *currentGameSequence;
 
 @end
 
 @implementation SimonGameVC
+
+#define kGameTurnCount (1000)
+
+-(NSArray*) generateNewGameSequence {
+    NSMutableArray *newSequence = [NSMutableArray new];
+    for(NSUInteger ii=0; ii < kGameTurnCount; ii++) {
+        NSUInteger randNum = arc4random() % 4;
+        [newSequence addObject:@(randNum)];
+    }
+    
+    //Debugging
+    NSLog(@"New Game Sequence: %@", newSequence);
+    
+    return newSequence;
+}
+- (NSArray*) gameButtons {
+    return @[self.upperLeftButton, self.upperRightButton, self.lowerLeftButton, _lowerRightButton];
+}
 
 - (void) awakeWithContext:(id)context {
     [super awakeWithContext:context];
@@ -28,6 +47,7 @@
 - (void) willActivate {
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
+    self.currentGameSequence = [self generateNewGameSequence];
 }
 
 - (void) didDeactivate {
