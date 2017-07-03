@@ -38,6 +38,20 @@
     return @[self.upperLeftButton, self.upperRightButton, self.lowerLeftButton, _lowerRightButton];
 }
 
+- (NSArray*) quadrantColors {
+    return @[[UIColor redColor], [UIColor blueColor], [UIColor yellowColor], [UIColor greenColor]];
+}
+
+- (NSArray*) quadrantFlashColor {
+    NSMutableArray *flashColors = [NSMutableArray new];
+    for(NSUInteger ii = 0; ii < [[self quadrantColors] count]; ii++) {
+        UIColor *flashColor = [[self quadrantColors][ii] colorWithAlphaComponent: .1];
+        [flashColors addObject:flashColor];
+    }
+    
+    return flashColors;
+}
+
 - (void) awakeWithContext:(id)context {
     [super awakeWithContext:context];
     
