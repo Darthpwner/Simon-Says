@@ -9,6 +9,11 @@
 #import "SimonGameVC.h"
 
 @interface SimonGameVC()
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *upperLeftButton;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *upperRightButton;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *lowerLeftButton;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *lowerRightButton;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *notificationLabel;
 
 @end
 

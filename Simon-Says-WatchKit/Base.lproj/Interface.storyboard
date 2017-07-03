@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Simon GameVC-->
         <scene sceneID="D84-Ie-PU9">
             <objects>
-                <controller id="tNV-Zo-9SM">
+                <controller id="tNV-Zo-9SM" customClass="SimonGameVC">
                     <items>
                         <separator alignment="left" id="OFj-aT-qu8"/>
                         <group width="1" height="55" alignment="left" id="gvD-l1-P0O">
@@ -63,6 +63,13 @@
                         <separator alignment="left" id="rPi-1e-i0S"/>
                         <label width="1" alignment="left" text="Starting Game" id="PME-zU-id4"/>
                     </items>
+                    <connections>
+                        <outlet property="lowerLeftButton" destination="9aB-na-hfn" id="qFE-n4-q1D"/>
+                        <outlet property="lowerRightButton" destination="58Q-1z-FX0" id="H93-l7-JH7"/>
+                        <outlet property="notificationLabel" destination="PME-zU-id4" id="CG1-Gc-6eu"/>
+                        <outlet property="upperLeftButton" destination="cDz-mH-Gde" id="1mr-Js-8ir"/>
+                        <outlet property="upperRightButton" destination="qf1-Vf-YQv" id="rAG-Mu-xWJ"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="497" y="345"/>
