@@ -14,10 +14,19 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="SimonMenuVC">
                     <items>
-                        <button width="136" alignment="left" title="Start Game" id="uHs-Vx-2D6"/>
+                        <button width="136" alignment="left" title="Start Game" id="uHs-Vx-2D6">
+                            <connections>
+                                <action selector="startGameAction" destination="AgC-eL-Hgc" id="AZL-sB-S3B"/>
+                            </connections>
+                        </button>
                         <label width="136" alignment="left" text="Game Over" textAlignment="center" id="orZ-An-tAf"/>
                         <label width="136" alignment="left" text="Score: 999" textAlignment="center" id="jZV-r3-obD"/>
                     </items>
+                    <connections>
+                        <outlet property="gameOverLabel" destination="orZ-An-tAf" id="Y41-vZ-yVp"/>
+                        <outlet property="scoreLabel" destination="jZV-r3-obD" id="EdF-Y5-vZ5"/>
+                        <outlet property="startGameButton" destination="uHs-Vx-2D6" id="L8a-Rh-6XB"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="220" y="345"/>

@@ -9,10 +9,18 @@
 #import "SimonMenuVC.h"
 
 @interface SimonMenuVC()
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *startGameButton;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *gameOverLabel;
+@property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *scoreLabel;
 
 @end
 
 @implementation SimonMenuVC
+
+- (IBAction)startGameAction {
+    
+}
+
 
 - (void) awakeWithContext:(id)context {
     [super awakeWithContext:context];
