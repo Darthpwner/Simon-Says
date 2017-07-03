@@ -18,7 +18,7 @@
 @implementation SimonMenuVC
 
 - (IBAction)startGameAction {
-    
+    [self pushControllerWithName:@"SimonNameVC" context: self];
 }
 
 
