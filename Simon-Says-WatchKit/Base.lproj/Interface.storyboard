@@ -31,6 +31,36 @@
             </objects>
             <point key="canvasLocation" x="220" y="345"/>
         </scene>
+        <!--Interface Controller-->
+        <scene sceneID="D84-Ie-PU9">
+            <objects>
+                <controller id="tNV-Zo-9SM">
+                    <items>
+                        <group width="1" alignment="left" id="gvD-l1-P0O">
+                            <items>
+                                <button width="0.5" height="60" alignment="left" id="cDz-mH-Gde">
+                                    <color key="backgroundColor" red="1" green="0.027805624138221741" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </button>
+                                <button width="0.5" height="60" alignment="left" id="qf1-Vf-YQv">
+                                    <color key="backgroundColor" red="0.071207808555809771" green="0.11125309694384844" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="qg5-qz-C32">
+                            <items>
+                                <button width="0.5" height="60" alignment="left" id="9aB-na-hfn">
+                                    <color key="backgroundColor" red="0.9146139751807727" green="1" blue="0.015281547616342706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </button>
+                                <button width="0.5" height="60" alignment="left" id="58Q-1z-FX0">
+                                    <color key="backgroundColor" red="0.053476878468257549" green="1" blue="0.047355451302607765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="497" y="345"/>
+        </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
             <objects>
