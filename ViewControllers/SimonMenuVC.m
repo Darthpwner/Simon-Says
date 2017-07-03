@@ -34,7 +34,7 @@
 }
 
 - (IBAction)startGameAction {
-    [self pushControllerWithName:@"SimonNameVC" context: self];
+    [self pushControllerWithName:@"SimonGameVC" context: self];
 }
 
 @end
