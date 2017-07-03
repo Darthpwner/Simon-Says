@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B5C32251F0B029200B045A3 /* SimonGameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B5C32241F0B029200B045A3 /* SimonGameVC.m */; };
 		6B7EE8C31F08E85C006252BD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7EE8C21F08E85C006252BD /* main.m */; };
 		6B7EE8C61F08E85C006252BD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7EE8C51F08E85C006252BD /* AppDelegate.m */; };
 		6B7EE8C91F08E85C006252BD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7EE8C81F08E85C006252BD /* ViewController.m */; };
@@ -84,6 +85,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6B5C32231F0B029200B045A3 /* SimonGameVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimonGameVC.h; sourceTree = "<group>"; };
+		6B5C32241F0B029200B045A3 /* SimonGameVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimonGameVC.m; sourceTree = "<group>"; };
 		6B7EE8BE1F08E85C006252BD /* Simon-Says.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simon-Says.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B7EE8C21F08E85C006252BD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6B7EE8C41F08E85C006252BD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -258,6 +261,8 @@
 			children = (
 				6B7EE9261F08EBD2006252BD /* SimonMenuVC.h */,
 				6B7EE9271F08EBD2006252BD /* SimonMenuVC.m */,
+				6B5C32231F0B029200B045A3 /* SimonGameVC.h */,
+				6B5C32241F0B029200B045A3 /* SimonGameVC.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -492,6 +497,7 @@
 			files = (
 				6B7EE9281F08EBD2006252BD /* SimonMenuVC.m in Sources */,
 				6B7EE9111F08E8B3006252BD /* ExtensionDelegate.m in Sources */,
+				6B5C32251F0B029200B045A3 /* SimonGameVC.m in Sources */,
 				6B7EE90E1F08E8B3006252BD /* InterfaceController.m in Sources */,
 				6B7EE9141F08E8B3006252BD /* NotificationController.m in Sources */,
 			);
@@ -799,6 +805,7 @@
 				6B7EE8F01F08E85D006252BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B7EE8F11F08E85D006252BD /* Build configuration list for PBXNativeTarget "Simon-SaysTests" */ = {
 			isa = XCConfigurationList;
@@ -807,6 +814,7 @@
 				6B7EE8F31F08E85D006252BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B7EE8F41F08E85D006252BD /* Build configuration list for PBXNativeTarget "Simon-SaysUITests" */ = {
 			isa = XCConfigurationList;
@@ -815,6 +823,7 @@
 				6B7EE8F61F08E85D006252BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B7EE91B1F08E8B3006252BD /* Build configuration list for PBXNativeTarget "Simon-Says-WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -823,6 +832,7 @@
 				6B7EE91D1F08E8B3006252BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6B7EE91F1F08E8B3006252BD /* Build configuration list for PBXNativeTarget "Simon-Says-WatchKit" */ = {
 			isa = XCConfigurationList;
@@ -831,6 +841,7 @@
 				6B7EE9211F08E8B3006252BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
