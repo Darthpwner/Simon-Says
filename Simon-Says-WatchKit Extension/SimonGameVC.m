@@ -52,6 +52,17 @@
     return flashColors;
 }
 
+- (void) flashQuadrantWithIndex: (NSUInteger) quadrantIndex {
+    UIColor *startingColor = [[self quadrantColors] objectAtIndex:quadrantIndex];
+    UIColor *flashColor = [[self quadrantFlashColor] objectAtIndex:quadrantIndex];
+    WKInterfaceButton *buttonToFlash = [[self gameButtons] objectAtIndex:quadrantIndex];
+    [buttonToFlash setBackgroundColor: flashColor];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [buttonToFlash setBackgroundColor:startingColor];
+    });
+}
+
 - (void) awakeWithContext:(id)context {
     [super awakeWithContext:context];
     
