@@ -89,6 +89,7 @@
 - (void) startPlayerTurn {
     [self.notificationLabel setText:@"Your Turn!"];
     self.userInputArray = [NSMutableArray new];
+    self.isBlockingButtons = NO;
 }
 
 - (void) playSeriesFromIndex: (NSUInteger) index toIndex: (NSUInteger) finishIndex {
