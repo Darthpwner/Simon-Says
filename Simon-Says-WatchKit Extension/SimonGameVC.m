@@ -73,6 +73,11 @@
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
     self.currentGameSequence = [self generateNewGameSequence];
+    
+    [self flashQuadrantWithIndex:1];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self flashQuadrantWithIndex:3];
+    });
 }
 
 - (void) didDeactivate {
