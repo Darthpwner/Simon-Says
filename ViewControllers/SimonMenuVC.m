@@ -7,6 +7,7 @@
 //
 
 #import "SimonMenuVC.h"
+#import "SimonGameVC.h"
 
 @interface SimonMenuVC()
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *startGameButton;
@@ -34,6 +35,11 @@
 
 - (IBAction)startGameAction {
     [self pushControllerWithName:@"SimonGameVC" context: self];
+}
+
+#pragma mark - SimonGameDelegate
+- (void) didEndGameWithScore:(NSUInteger) score {
+    [self.scoreLabel setText:[NSString stringWithFormat:@"Score: %d", (int) score]];
 }
 
 @end

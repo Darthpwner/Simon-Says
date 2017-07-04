@@ -136,6 +136,10 @@
     [self playSeriesForTurn:self.currentPlayerTurn];
 }
 
+- (void) endGame {
+    
+}
+
 - (void) playerPressedQuadrant: (NSNumber*) quadrant {
     if (self.isBlockingButtons) {
         return;
@@ -144,7 +148,7 @@
     [self.userInputArray addObject:quadrant];
     for (NSUInteger ii = 0; ii < [self.userInputArray count]; ii++) {
         if (![self.userInputArray[ii] isEqual:self.currentGameSequence[ii]]) {
-                //end game
+            [self endGame];
             return;
         }
     }

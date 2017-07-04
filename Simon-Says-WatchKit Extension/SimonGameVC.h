@@ -8,6 +8,10 @@
 
 #import <WatchKit/WatchKit.h>
 
+@protocol SimonGameDelegate <NSObject>
+- (void) didEndGameWithScore: (NSUInteger) score;
+@end
+
 @interface SimonGameVC : WKInterfaceController
 
 @end

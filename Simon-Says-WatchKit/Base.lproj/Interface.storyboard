@@ -19,8 +19,8 @@
                                 <action selector="startGameAction" destination="AgC-eL-Hgc" id="AZL-sB-S3B"/>
                             </connections>
                         </button>
-                        <label width="136" alignment="left" text="Game Over" textAlignment="center" id="orZ-An-tAf"/>
-                        <label width="136" alignment="left" text="Score: 999" textAlignment="center" id="jZV-r3-obD"/>
+                        <label width="136" alignment="left" hidden="YES" text="Game Over" textAlignment="center" id="orZ-An-tAf"/>
+                        <label width="136" alignment="left" hidden="YES" text="Score: 999" textAlignment="center" id="jZV-r3-obD"/>
                     </items>
                     <connections>
                         <outlet property="gameOverLabel" destination="orZ-An-tAf" id="Y41-vZ-yVp"/>
