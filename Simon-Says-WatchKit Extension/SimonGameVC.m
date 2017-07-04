@@ -86,9 +86,15 @@
     [self startGame];
 }
 
+- (void) startPlayerTurn {
+    [self.notificationLabel setText:@"Your Turn!"];
+    self.userInputArray = [NSMutableArray new];
+}
+
 - (void) playSeriesFromIndex: (NSUInteger) index toIndex: (NSUInteger) finishIndex {
     if (index == finishIndex) {
         // start next player turn
+        [self startPlayerTurn];
         return;
     }
     NSNumber* currentQuadrant = [self.currentGameSequence objectAtIndex:index];
@@ -122,7 +128,7 @@
     [super didDeactivate];
 }
 
-- (void) startNextTurn {
+- (void) startSimonTurn {
     self.currentPlayerTurn++;
     self.isBlockingButtons = YES;
     [self.notificationLabel setText: @"Nice Job! Next Turn..."];
@@ -143,21 +149,25 @@
     }
     
     if ([self.userInputArray count] == self.currentPlayerTurn) {
-        [self startNextTurn];
+        [self startSimonTurn];
     }
     
 }
 
 - (IBAction)upperLeftAction {
+    [self playerPressedQuadrant:@(0)];
 }
 
 - (IBAction)upperRightAction {
+    [self playerPressedQuadrant:@(1)];
 }
 
 - (IBAction)lowerLeftAction {
+    [self playerPressedQuadrant:@(2)];
 }
 
 - (IBAction)lowerRightAction {
+    [self playerPressedQuadrant:@(3)];
 }
 
 
