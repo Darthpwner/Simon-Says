@@ -56,13 +56,13 @@
     return flashColors;
 }
 
-- (void) flashQuadrantWithIndex: (NSUInteger) quadrantIndex {
+- (void) flashQuadrantWithIndex: (NSUInteger) quadrantIndex duration: (float) duration {
     UIColor *startingColor = [[self quadrantColors] objectAtIndex:quadrantIndex];
     UIColor *flashColor = [[self quadrantFlashColor] objectAtIndex:quadrantIndex];
     WKInterfaceButton *buttonToFlash = [[self gameButtons] objectAtIndex:quadrantIndex];
     [buttonToFlash setBackgroundColor: flashColor];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [buttonToFlash setBackgroundColor:startingColor];
     });
 }
@@ -102,7 +102,7 @@
     }
     NSNumber* currentQuadrant = [self.currentGameSequence objectAtIndex:index];
     NSLog(@"Quadrant :%@ index: %d finishIndex: %d", currentQuadrant, (int) index, (int) finishIndex);
-    [self flashQuadrantWithIndex:[currentQuadrant unsignedIntegerValue]];
+    [self flashQuadrantWithIndex:[currentQuadrant unsignedIntegerValue] duration: .4];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self playSeriesFromIndex: index + 1 toIndex:finishIndex];
     });
@@ -135,7 +135,9 @@
     self.currentPlayerTurn++;
     self.isBlockingButtons = YES;
     [self.notificationLabel setText: @"Nice Job! Next Turn..."];
-    [self playSeriesForTurn:self.currentPlayerTurn];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self playSeriesForTurn:self.currentPlayerTurn];
+    });
 }
 
 - (void) endGame {

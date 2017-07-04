@@ -9,10 +9,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="12029"/>
     </dependencies>
     <scenes>
-        <!--Simon Menu-->
+        <!--Simon-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller identifier="SimonMenuVC" title="Simon Menu" id="AgC-eL-Hgc" customClass="SimonMenuVC">
+                <controller identifier="SimonMenuVC" title="Simon" id="AgC-eL-Hgc" customClass="SimonMenuVC">
                     <items>
                         <button width="136" alignment="left" title="Start Game" id="uHs-Vx-2D6">
                             <connections>
@@ -36,7 +36,6 @@
             <objects>
                 <controller identifier="SimonGameVC" title="Simon" id="tNV-Zo-9SM" customClass="SimonGameVC">
                     <items>
-                        <separator alignment="left" id="OFj-aT-qu8"/>
                         <group width="1" height="55" alignment="left" id="gvD-l1-P0O">
                             <items>
                                 <button width="0.5" height="1" alignment="left" id="cDz-mH-Gde">
@@ -54,7 +53,6 @@
                                 </button>
                             </items>
                         </group>
-                        <separator alignment="left" id="5g7-gy-ulx"/>
                         <group width="1" height="55" alignment="left" id="qg5-qz-C32">
                             <items>
                                 <separator alignment="left" id="lkV-Iw-uXv"/>
@@ -72,7 +70,6 @@
                                 </button>
                             </items>
                         </group>
-                        <separator alignment="left" id="rPi-1e-i0S"/>
                         <label width="1" alignment="left" text="Starting Game" id="PME-zU-id4"/>
                     </items>
                     <connections>
