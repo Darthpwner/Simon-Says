@@ -15,6 +15,8 @@
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceButton *lowerRightButton;
 @property (unsafe_unretained, nonatomic) IBOutlet WKInterfaceLabel *notificationLabel;
 @property (strong, nonatomic) NSArray *currentGameSequence;
+@property (assign, nonatomic) NSUInteger currentPlayerTurn;
+@property (assign, nonatomic) BOOL isBlockingButtons;
 
 @end
 
@@ -78,6 +80,20 @@
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self flashQuadrantWithIndex:3];
     });
+}
+
+- (void) startGame {
+    self.currentPlayerTurn = 0;
+    self.isBlockingButtons = YES;
+    [self.notificationLabel setText:@"Ready"];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (1 * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
+                       [self.notificationLabel setText:@"Set"];
+                       dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                           [self.notificationLabel setText:@"Go"];
+                       
+                       });
+                   });
 }
 
 - (void) didDeactivate {
