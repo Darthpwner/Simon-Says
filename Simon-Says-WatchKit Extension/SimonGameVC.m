@@ -75,11 +75,31 @@
     // This method is called when watch view controller is about to be visible to user
     [super willActivate];
     self.currentGameSequence = [self generateNewGameSequence];
+
+/*    Testing purposes */
+//    [self flashQuadrantWithIndex:1];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self flashQuadrantWithIndex:3];
+//    });
     
-    [self flashQuadrantWithIndex:1];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self flashQuadrantWithIndex:3];
+    [self startGame];
+}
+
+- (void) playSeriesFromIndex: (NSUInteger) index toIndex: (NSUInteger) finishIndex {
+    if (index == finishIndex) {
+        // start next player turn
+        return;
+    }
+    NSNumber* currentQuadrant = [self.currentGameSequence objectAtIndex:index];
+    NSLog(@"Quadrant :%@ index: %d finishIndex: %d", currentQuadrant, (int) index, (int) finishIndex);
+    [self flashQuadrantWithIndex:[currentQuadrant unsignedIntegerValue]];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self playSeriesFromIndex: index + 1 toIndex:finishIndex];
     });
+}
+
+- (void) playSeriesForTurn: (NSUInteger) turnIndex {
+    [self playSeriesFromIndex:0 toIndex: turnIndex];
 }
 
 - (void) startGame {
@@ -90,7 +110,9 @@
                    dispatch_get_main_queue(), ^{
                        [self.notificationLabel setText:@"Set"];
                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                           [self.notificationLabel setText:@"Go"];
+                           [self.notificationLabel setText:@"Go!"];
+                           // [self playSerieForTurn: self.currentPlayerTurn];
+                           [self playSeriesForTurn: 5];
                        
                        });
                    });
