@@ -17,6 +17,7 @@
 @property (strong, nonatomic) NSArray *currentGameSequence;
 @property (assign, nonatomic) NSUInteger currentPlayerTurn;
 @property (assign, nonatomic) BOOL isBlockingButtons;
+@property (strong, nonatomic) NSMutableArray *userInputArray;
 
 @end
 
@@ -103,7 +104,7 @@
 }
 
 - (void) startGame {
-    self.currentPlayerTurn = 0;
+    self.currentPlayerTurn = 1;
     self.isBlockingButtons = YES;
     [self.notificationLabel setText:@"Ready"];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (1 * NSEC_PER_SEC)),
@@ -111,9 +112,7 @@
                        [self.notificationLabel setText:@"Set"];
                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                            [self.notificationLabel setText:@"Go!"];
-                           // [self playSerieForTurn: self.currentPlayerTurn];
-                           [self playSeriesForTurn: 5];
-                       
+                           [self playSeriesForTurn: self.currentPlayerTurn];
                        });
                    });
 }
@@ -121,6 +120,32 @@
 - (void) didDeactivate {
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
+}
+
+- (void) startNextTurn {
+    self.currentPlayerTurn++;
+    self.isBlockingButtons = YES;
+    [self.notificationLabel setText: @"Nice Job! Next Turn..."];
+    [self playSeriesForTurn:self.currentPlayerTurn];
+}
+
+- (void) playerPressedQuadrant: (NSNumber*) quadrant {
+    if (self.isBlockingButtons) {
+        return;
+    }
+    
+    [self.userInputArray addObject:quadrant];
+    for (NSUInteger ii = 0; ii < [self.userInputArray count]; ii++) {
+        if (![self.userInputArray[ii] isEqual:self.currentGameSequence[ii]]) {
+                //end game
+            return;
+        }
+    }
+    
+    if ([self.userInputArray count] == self.currentPlayerTurn) {
+        [self startNextTurn];
+    }
+    
 }
 
 - (IBAction)upperLeftAction {
