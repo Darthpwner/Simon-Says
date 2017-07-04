@@ -18,6 +18,7 @@
 @property (assign, nonatomic) NSUInteger currentPlayerTurn;
 @property (assign, nonatomic) BOOL isBlockingButtons;
 @property (strong, nonatomic) NSMutableArray *userInputArray;
+@property (weak, nonatomic) id<SimonGameDelegate> delegate;
 
 @end
 
@@ -68,6 +69,7 @@
 
 - (void) awakeWithContext:(id)context {
     [super awakeWithContext:context];
+    self.delegate = context;
     
     // Configure interface objects here.
 }
@@ -137,7 +139,7 @@
 }
 
 - (void) endGame {
-    
+    [self.delegate didEndGameWithScore:self.currentPlayerTurn];
 }
 
 - (void) playerPressedQuadrant: (NSNumber*) quadrant {
